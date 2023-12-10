@@ -1,0 +1,23 @@
+#root {
+  max-width: 1820px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.card-container {
+  display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.imgCard {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.card:not(:last-child) {
+  margin-right: 20px;
+}
+
