@@ -19,6 +19,7 @@ const Card=({id, imag, titulo, onDelete} )=> {
           <button  onClick={()=>incrementCounter()}>Like</button>
           <button  onClick={()=>onDelete(id)}>Borrar</button>
       </div>
+      
   );
 };
 

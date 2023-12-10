@@ -170,6 +170,27 @@ export const Contexto =createContext();
 		}
     
 	]);
+    function App() {
+        const [cartas, setCartas] = useState(/* ... */);
+        const [filtro, setFiltro] = useState('');
+      
+        const cartasFiltradas = cartas.filter((carta) =>
+          carta.nombre.toLowerCase().includes(filtro.toLowerCase())
+        );
+      
+        return (
+          <div>
+            <Buscador onBuscar={setFiltro} />
+            <ul>
+              {cartasFiltradas.map((carta) => (
+                <li key={carta.id}>
+                  <strong>{carta.nombre}</strong>: {carta.contenido}
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      }
 
 
 
@@ -179,7 +200,7 @@ export const Contexto =createContext();
 		setCards(updatedCards);
 	};
 
-    const [busqueda, setBusqueda] = useState("");
+    const [Busqueda, setBusqueda] = useState("");
 
     return (<>
         <Contexto.Provider value={{ cards, setCards, handleDeleteCard, setBusqueda }}>

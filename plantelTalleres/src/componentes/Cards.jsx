@@ -1,8 +1,10 @@
 import  { useContext } from 'react'
 import { Contexto } from '../context/ContextProvider';
 import Card from "./Card";
+import Navbar from './Navbar';
 function Cards() {
     const { cards, handleDeleteCard } = useContext(Contexto);
+    
   
    
     return (
