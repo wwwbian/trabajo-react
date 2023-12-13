@@ -1,19 +1,21 @@
-import { useState } from "react";
-import Card from "./componentes/Cards";
-import Home from "./componentes/Home";
-import Navbar from "./componentes/Navbar"
+import MyCard from "./componentes/MyCards";
+import Navbar from "./componentes/Navbar"; 
+import MiProvider  from "./context/MiProvider";
+
 import "./App.css";
-import ContextProvider from "./context/ContextProvider";
+// cambiar a useState 
 function App() {
 
-
-	return (
-		<>
-			<ContextProvider>				
-				<Home/>
-			</ContextProvider>
-		</>	
-	);
+    return (
+        
+        <div>
+            <MiProvider> 
+                <Navbar />
+                <h1>Bienvenido a 22xT</h1>
+                <MyCard />
+           </MiProvider>
+      </div>
+  );
 }
 
 export default App;

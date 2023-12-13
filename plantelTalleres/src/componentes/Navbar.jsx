@@ -1,30 +1,33 @@
+import React, { useContext } from "react";
+import { Contexto } from "../context/MiProvider";
+// Agrega la imagen importada si aún no lo has hecho
 
-import React, { useState } from 'react';
+function Navbar() {
+  const { setBusqueda } = useContext(Contexto);
 
-
-const Navbar = () => {
-  const [activeItem, setActiveItem] = useState('home');
-
-  const handleItemClick = (itemName) => {
-    setActiveItem(itemName);
-    // Puedes agregar lógica adicional aquí, por ejemplo, redireccionar a otra página.
+  const handleSearch = (event) => {
+    setBusqueda(event.target.value);
   };
 
   return (
-    <nav>
-      <ul>
-        <li className={activeItem === 'home' ? 'active' : ''} onClick={() => handleItemClick('home')}>
-          <Link to="/">Home</Link>
-        </li>
-        <li className={activeItem === 'about' ? 'active' : ''} onClick={() => handleItemClick('about')}>
-          <Link to="/about">About</Link>
-        </li>
-        <li className={activeItem === 'contact' ? 'active' : ''} onClick={() => handleItemClick('contact')}>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+    <nav className="navbar">
+      <div className="navbar-container">
+      
+      <img src='https://1.bp.blogspot.com/-XTZt_IRapI0/YHIclsUsdoI/AAAAAAABjK8/hWjSyl0oyn4cNVoE_mfWo-0-0ng47KOMACLcBGAsYHQ/s0/Talleres%2Bde%2BCordoba256x.png'  alt="Logo" className="logo" />
+      
+      <h1 className="navbar-title">¿No encontras tu jugador?</h1>
+        <div className="search-container">
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Buscar jugadores..."
+            onChange={handleSearch}
+          />
+          {/* Agrega un icono o botón de búsqueda si es necesario */}
+        </div>
+      </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
